@@ -23,12 +23,21 @@ namespace HairSalon
     [Fact]
     public void Test2_Save()
     {
-    Stylist testStylist = new Stylist("StylistName");
-    testStylist.Save();
-    Stylist savedStylist = Stylist.GetAll()[0];
-    int result = savedStylist.GetId();
-    int testId = testStylist.GetId();
-    Assert.Equal(testId, result);
+      Stylist testStylist = new Stylist("StylistName");
+      testStylist.Save();
+      Stylist savedStylist = Stylist.GetAll()[0];
+      int result = savedStylist.GetId();
+      int testId = testStylist.GetId();
+      Assert.Equal(testId, result);
+    }
+
+    [Fact]
+    public void Test3_FindCorrectStylist()
+    {
+      Stylist testStylist = new Stylist("StylistName");
+      testStylist.Save();
+      Stylist foundStylist = Stylist.Find(testStylist.GetId());
+      Assert.Equal(testStylist, foundStylist);
     }
 
 
