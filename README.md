@@ -22,7 +22,7 @@ _{This is a detailed description of your application. Its purpose and usage.  Gi
 * _USE hair_salon; _
 * _GO _
 * _CREATE TABLE stylists (id INT IDENTITY(1,1), name VARCHAR(255)); _
-* _CREATE TABLE clients (id INT IDENTITY(1,1), name VARCHAR(255)); _
+* _CREATE TABLE clients (id INT IDENTITY(1,1), name VARCHAR(255), stylist_id INT); _
 * _GO _
 
 
