@@ -66,7 +66,7 @@ namespace HairSalon
     }
 
     [Fact]
-    public void Test7_GetClientsWithStylist()
+    public void Test7_GetClientsInStylist()
     {
       Stylist testStylist = new Stylist("StylistName");
       testStylist.Save();
