@@ -13,6 +13,12 @@ namespace HairSalon
     {
       DBConfiguration.ConnectionString = "Data Source=(localdb)\\mssqllocaldb;Initial Catalog=hair_salon_test;Integrated Security=SSPI;";
     }
+    [Fact]
+    public void Test1_EmptyDatabase()
+    {
+      int result = Client.GetAll().Count;
+      Assert.Equal(0, result);
+    }
 
 
     public void Dispose()
