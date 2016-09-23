@@ -1,42 +1,37 @@
+using Xunit;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System;
+using System.Data;
+using System.Data.SqlClient;
+
 
 namespace HairSalon
 {
-  public class Stylist
+  public class StylistTest : IDisposable
   {
-    private int _id;
-    private string _name;
+    public StylistTest()
+    {
+      DBConfiguration.ConnectionString = "Data Source=(localdb)\\mssqllocaldb;Initial Catalog=hair_salon_test;Integrated Security=SSPI;";
+    }
+    [Fact]
+    public void Test1_EmptyDatabase()
+    {
+      int result = Stylist.GetAll().Count;
+      Assert.Equal(0, result);
+    }
 
-    public Stylist(string Name, int Id = 0)
+
+
+
+
+
+
+
+    public void Dispose()
     {
-      _id = Id;
-      _name = Name;
+      Stylist.DeleteAll();
+      // Client.DeleteAll();
+
     }
-    public int GetId()
-    {
-      return _id;
-    }
-    public string GetName()
-    {
-      return _name;
-    }
-    public void SetName(string newName)
-    {
-      _name = newName;
-    }
-    public override bool Equals(System.Object otherStylist)
-    {
-      if (!(otherStylist is Stylist))
-      {
-        return false;
-      }
-      else
-      {
-        Stylist newStylist = (Stylist) otherStylist;
-        bool idEquality = (this.GetId() == newStylist.GetId());
-        bool nameEquality = (this.GetName() == newStylist.GetName());
-        return (idEquality && nameEquality);
-      }
-    }
+  }
+}
