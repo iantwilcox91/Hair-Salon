@@ -110,7 +110,7 @@ namespace HairSalon
       conn.Close();
     }
 
-    public static Stylist Find(int id)
+    public static Client Find(int id)
     {
       SqlConnection conn = DB.Connection();
       conn.Open();
