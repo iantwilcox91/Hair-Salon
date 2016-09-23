@@ -40,6 +40,17 @@ namespace HairSalon
       Assert.Equal(testStylist, foundStylist);
     }
 
+    [Fact]
+    public void Test4_UpdateStylist()
+    {
+      string name = "StylistName";
+      Stylist testStylist = new Stylist(name);
+      testStylist.Save();
+      string newName = "StylistNewName";
+      testStylist.Update(newName);
+      string result = testStylist.GetName();
+      Assert.Equal(newName, result);
+    }
 
 
 
