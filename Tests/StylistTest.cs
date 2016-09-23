@@ -53,7 +53,7 @@ namespace HairSalon
     }
 
     [Fact]
-    public void Test6_DeleteStylist()
+    public void Test5_DeleteStylist()
     {
       Stylist firstStylist = new Stylist("FirstStylistName");
       firstStylist.Save();
@@ -64,12 +64,6 @@ namespace HairSalon
       List<Stylist> testStylist = new List<Stylist> {secondStylist};
       Assert.Equal(testStylist, allStylists);
     }
-
-
-
-
-
-
 
     public void Dispose()
     {
