@@ -6,11 +6,12 @@
 else
 {
   <ol>
-    @foreach (var Stylist in @Model)
+    @foreach (var Stylist in Model)
     {
-      <li>@Stylist.GetName()</li>
+      <a href="/viewTheClientsForThisStylist/{id}"><li>@Stylist.GetName()</li></a>
     }
   </ol>
 }
 <p><a href="/addNewClientToStylist">Add a Client</a></p>
+<p><a href="/deleteAllStylists">Delete all Stylists</a></p>
 <p><a href="/">Home</a></p>
