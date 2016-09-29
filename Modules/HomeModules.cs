@@ -74,6 +74,25 @@ namespace HairSalon
         SelectedStylists.Update(Request.Form["stylist-name"]);
         return View["index.cshtml", SelectedStylists];
       };
+
+
+
+
+      Get["client/edit/{id}"] = parameters => {
+        Client SelectedClient = Client.Find(parameters.id);
+        return View["client_edit.cshtml", SelectedClient];
+      };
+
+      Patch["client/edit/{id}"] = parameters => {
+        Client SelectedClient = Client.Find(parameters.id);
+        SelectedClient.Update(Request.Form["client-name"]);
+        return View["index.cshtml", SelectedClient];
+      };
+
+
+
+
+
     }
   }
 }
