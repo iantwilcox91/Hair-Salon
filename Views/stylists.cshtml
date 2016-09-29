@@ -8,7 +8,7 @@ else
   <ol>
     @foreach (var Stylist in Model)
     {
-      <a href="/viewTheClientsForThisStylist/{id}"><li>@Stylist.GetName()</li></a>
+      <li><a href="/viewTheClientsForThisStylist/@Stylist.GetId()">@Stylist.GetName()</a> | <a href="/stylist/edit/@Stylist.GetId()">Edit</a> | <a href="/stylist/delete/@Stylist.GetId()">Delete</a></li>
     }
   </ol>
 }

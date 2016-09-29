@@ -55,13 +55,10 @@ namespace HairSalon
         return View["deleteAllClients.cshtml"];
       };
 
-
-
-//this link doesnt work - breaks page
       Get["/viewTheClientsForThisStylist/{id}"] = parameters => {
         Dictionary<string, object> Model = new Dictionary<string, object>();
-        var SelectedStylists = Stylist.Find(parameters.id);
-        var StylistsClients = SelectedStylists.GetClients();
+        Stylist SelectedStylists = Stylist.Find(parameters.id);
+        List<Client> StylistsClients = SelectedStylists.GetClients();
         Model.Add("stylists", SelectedStylists);
         Model.Add("clients", StylistsClients);
         return View["viewTheClientsForThisStylist.cshtml", Model];
