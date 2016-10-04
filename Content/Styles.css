@@ -1,6 +1,39 @@
 .background{
   background-image: url("https://littleduckies.files.wordpress.com/2013/02/scissors-comb.jpg");
 }
+.backgroundOrange{
+  background-color: orange;
+}
 .textgreen{
-  color: green;
+  color: lightgreen;
+}
+h1 {
+  text-align: center;
+}
+h2 {
+  text-align: center;
+}
+h3 {
+  text-align: center;
+}
+h4 {
+  text-align: center;
+}
+h5 {
+  text-align: center;
+}
+h6 {
+  text-align: center;
+}
+ol {
+  text-align: center;
+}
+li {
+  text-align: center;
+}
+p {
+  text-align: center;
+}
+form {
+  text-align: center;
 }

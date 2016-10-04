@@ -1,13 +1,29 @@
-<h1>Add a New Client</h1>
-<form action="/addedNewClientToStylist" method="post">
-  <label for="client-name">Client name:</label>
-  <input id="client-name" name="client-name" type="text">
-  <select name="stylist-id">
-    @foreach (var stylist in Model)
-    {
-      <option value="@stylist.GetId()">@stylist.GetName()</option>
-    }
-  </select>
-  <button type="submit">Add new client</button>
-</form>
-<p><a href="/">Home</a></p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="../content/Styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  </head>
+  <body class="backgroundOrange">
+
+    <h1 class="textgreen">Add a New Client</h1>
+    <form action="/addedNewClientToStylist" method="post">
+      <label for="client-name">Client name:</label>
+      <input id="client-name" name="client-name" type="text">
+      <select name="stylist-id">
+        @foreach (var stylist in Model)
+        {
+          <option value="@stylist.GetId()">@stylist.GetName()</option>
+        }
+      </select>
+      <button type="submit">Add new client</button>
+    </form>
+    <p><a href="/">Home</a></p>
+
+
+
+</body>
+</html>
